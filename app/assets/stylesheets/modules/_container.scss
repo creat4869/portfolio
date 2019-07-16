@@ -2,4 +2,53 @@
   width: 100%;
   height: calc(100vh - 100px);
   margin-top: 50px;
+  .top-img{
+    .inner{
+      img{
+        width: 100%;
+        vertical-align: bottom;
+      }
+    }
+  }
+  .top-contents{
+    .inner{
+      .omoi{
+        div{
+          margin: 0 auto;
+          font-size: 13px;
+          text-align: center;
+          letter-spacing: 2px;
+          line-height: 2em;
+          padding: 35px 0;
+        }
+      }
+    }
+  }
+}
+
+/*PC用*/
+@media screen and (min-width: 960px){
+  .top-img{
+    background: $white url("top-img_bg.png") left 2px repeat-x;
+    .inner{
+      width: 1200px;
+      margin: 0 auto;
+    }
+  }
+  .top-contents{
+    .inner{
+      width: 1200px;
+      margin: 0 auto;
+      .omoi{
+        div{
+          width: 1000px;
+          margin: 35px auto;
+          font-size: 15px;
+          text-align: center;
+          letter-spacing: 4px;
+          line-height: 2em;
+        }
+      }
+    }
+  }
 }
