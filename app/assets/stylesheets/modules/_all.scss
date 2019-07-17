@@ -1,0 +1,26 @@
+body{
+  font-family: 'Noto Sans JP', 'Source Sans Pro', sans-serif;
+  /*background-color: #f3f3e8;*/
+  background-image: url("background.png");
+  color: $black;
+  font-weight: 300;
+
+  a{
+    color: $black;
+    text-decoration: none;
+  }
+}
+
+/*PC用*/
+@media screen and (min-width: 960px){
+  .screen-mb{
+    display: none;
+  }
+}
+
+/*タブレット・スマホ用*/
+@media screen and (max-width: 959px){
+  .screen-pc{
+    display: none;
+  }
+}

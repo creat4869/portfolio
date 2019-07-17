@@ -1,0 +1,178 @@
+header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  z-index: 100;
+  background-color: $white;
+  .inner{
+    position:relative;
+    width: 100%;
+    height: 50px;
+    z-index: 99;
+    h1{
+      display: inline-block;
+      padding: 7px 12px;
+      a{
+        font-size: 25px;
+        letter-spacing: 7px;
+        img{
+          width: 32px;
+          padding-right: 7px;
+          vertical-align: sub;
+        }
+      }
+    }
+    .screen-pc{
+      display: inline;
+      .header_sns{
+        display: inline-block;
+        float: right;
+        padding: 12px;
+        li{
+          display: inline-block;
+          margin: 0 10px;
+          .fab{
+            font-size: 25px;
+          }
+        }
+      }
+    }
+  }
+}
+
+/*menu*/
+.menu{
+  height: 20px;
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  width: 25px;
+  z-index: 99;
+  &__line{
+    background: $black;
+    display: block;
+    height: 2px;
+    position: absolute;
+    transition:transform .3s;
+    width: 100%;
+  }
+  &__line--top{
+    &.active{
+      top: 8px;
+      transform: rotate(45deg);
+      background: $white;
+    }
+  }
+  &__line--center{
+    top: 9px;
+    &.active{
+      transform:scaleX(0);
+      background: $white;
+    }
+  }
+  &__line--bottom{
+    bottom: 0;
+    &.active{
+      bottom: 10px;
+      transform: rotate(135deg);
+      background: $white;
+    }
+  }
+}
+
+/*gnav*/
+.gnav{
+  background: rgba(0,0,0,0.8);
+  display: none;
+  height: 100%;
+  position: fixed;
+  width: 100%;
+  z-index: 98;
+  &__wrap{
+    align-items:center;
+    display: flex;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    .gnav__menu{
+      position: absolute;
+      left: 52.5%;
+      top: 20%;
+      transform: translateX(-50%);
+      width: 170px;
+      &__item{
+        margin: 20px 0 20px 100px;
+        opacity: 0;
+        a{
+          color: $white;
+          font-size: 2em;
+          font-weight: 600;
+          text-decoration: none;
+          transition: .5s;
+          &:hover{
+            color: #666;
+          }
+        }
+      }
+    }
+  }
+}
+
+/*PC用*/
+@media screen and (min-width: 960px){
+  header{
+    .inner{
+      width: 1200px;
+      margin: 0 auto;
+    }
+  }
+}
+
+/*タブレット用*/
+@media screen and (max-width: 959px){
+  header{
+    .inner{
+      h1{
+        float: left;
+      }
+      .screen-pc{
+        display: none;
+      }
+    }
+  }
+
+  .gnav{
+    &__wrap{
+      .gnav__menu{
+        left: 56%;
+      }
+    }
+  }
+}
+
+/*スマホ用*/
+@media screen and (max-width: 479px){
+  header{
+    .inner{
+      h1{
+        a{
+          font-size: 20px;
+          letter-spacing: 5px;
+          img{
+            vertical-align: bottom;
+          }
+        }
+      }
+    }
+  }
+
+  .gnav{
+    &__wrap{
+      .gnav__menu{
+        left: 60%;
+      }
+    }
+  }
+}
