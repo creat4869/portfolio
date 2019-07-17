@@ -5,12 +5,12 @@ header{
   width: 100%;
   height: 50px;
   z-index: 100;
+  background-color: $white;
   .inner{
     position:relative;
     width: 100%;
     height: 50px;
     z-index: 99;
-    background-color: $white;
     h1{
       display: inline-block;
       padding: 7px 12px;

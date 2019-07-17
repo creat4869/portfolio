@@ -1,6 +1,6 @@
 .container{
   width: 100%;
-  height: calc(100vh - 100px);
+  // height: calc(100vh - 100px);
   margin-top: 50px;
   .top-img{
     .inner{
@@ -10,7 +10,8 @@
       }
     }
   }
-  .top-contents{
+  .top-contents1{
+    background-color: $white;
     .inner{
       .omoi{
         div{
@@ -19,7 +20,32 @@
           text-align: center;
           letter-spacing: 2px;
           line-height: 2em;
-          padding: 35px 0;
+          padding: 40px 0 45px;
+        }
+      }
+    }
+  }
+  .top-contents2{
+    .inner{
+      .menu2{
+        div{
+          text-align: center;
+          ul{
+            display: inline-block;
+            li{
+              display: table-cell;
+              width: 200px;
+              padding: 50px 25px;
+              div{
+                text-align: center;
+                font-size: 25px;
+                font-weight: 400;
+                img{
+                  width: 85%;
+                }
+              }
+            }
+          }
         }
       }
     }
@@ -28,25 +54,53 @@
 
 /*PC用*/
 @media screen and (min-width: 960px){
-  .top-img{
-    background: $white url("top-img_bg.png") left 2px repeat-x;
-    .inner{
-      width: 1200px;
-      margin: 0 auto;
+  .container{
+    .top-img{
+      background: $white url("top-img_bg.png") left 2px repeat-x;
+      .inner{
+        width: 1200px;
+        margin: 0 auto;
+      }
+    }
+    .top-contents1{
+      .inner{
+        width: 1200px;
+        margin: 0 auto;
+        .omoi{
+          div{
+            width: 1000px;
+            margin: 0 auto;
+            font-size: 15px;
+            text-align: center;
+            letter-spacing: 4px;
+            line-height: 2em;
+          }
+        }
+      }
     }
   }
-  .top-contents{
-    .inner{
-      width: 1200px;
-      margin: 0 auto;
-      .omoi{
-        div{
-          width: 1000px;
-          margin: 35px auto;
-          font-size: 15px;
-          text-align: center;
-          letter-spacing: 4px;
-          line-height: 2em;
+}
+
+/*スマホ用*/
+@media screen and (max-width: 479px){
+  .container{
+    .top-contents2{
+      .inner{
+        .menu2{
+          div{
+            ul{
+              li{
+                width: auto;
+                padding: 50px 10px;
+                div{
+                  font-size: 17px;
+                  img{
+                    width: 85%;
+                  }
+                }
+              }
+            }
+          }
         }
       }
     }
