@@ -1,0 +1,176 @@
+.container{
+  .about-contents{
+    .inner{
+      .about{
+        padding: 40px 0;
+        margin: 0 auto;
+        h2{
+          margin: 0 0 25px 0;
+          font-size: 46px;
+          text-align: left;
+        }
+        p{
+          margin-bottom: 50px;
+          font-size: 14px;
+          letter-spacing: 1px;
+          line-height: 2em;
+        }
+        .about-me{
+          img{
+            width: 15%;
+            border-radius: 50%;
+            vertical-align: top;
+            margin-right: 25px;
+          }
+          div{
+            display: inline-block;
+            width: 80%;
+            p{
+              margin-bottom: 10px;
+              font-size: 25px;
+              font-weight: 400;
+            }
+            table{
+              font-size: 14px;
+              line-height: 2em;
+              word-break: keep-all;
+              tr{
+                vertical-align: top;
+                th{
+                  width: 20%;
+                }
+                td{
+  
+                }
+              }
+            }
+          }
+        }
+      }
+      .sns-btn{
+        ul{
+          text-align: center;
+          margin: 50px 0;
+          li{
+            display: inline-block;
+            margin: 0 10px;
+            font-size: 25px;
+            border-radius: 50px;
+            width: 45px;
+            height: 45px;
+            text-align: center;
+            line-height: 43px;
+            &:nth-child(1){
+              background:#55acee;
+            }
+            &:nth-child(2){
+              background:-webkit-linear-gradient(135deg, #427eff 0%, #f13f79 70%) no-repeat;
+              background:linear-gradient(135deg, #427eff 0%, #f13f79 70%) no-repeat;
+            }
+            &:nth-child(3){
+              background: #662785;
+            }
+            a{
+              color: $white;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/*PC用*/
+@media screen and (min-width: 960px){
+  .container{
+    .about-contents{
+      .inner{
+        width: 1200px;
+        margin: 0 auto;
+        .about{
+          width: 800px;
+        }
+      }
+    }
+  }
+}
+
+/*タブレット用*/
+@media screen and (max-width: 959px){
+  .container{
+    .about-contents{
+      .inner{
+        .about{
+          margin: 0 16px;
+          h2{
+            font-size: 35px;
+            text-align: center;
+          }
+          p{
+            font-size: 13px;
+            letter-spacing: 0px;
+            word-break: keep-all;
+            text-align: center;
+          }
+          .about-me{
+            text-align: center;
+            img{
+              width: 20%;
+              margin: 0;
+            }
+            div{
+              width: 100%;
+              table{
+                width: 70%;
+                font-size: 13px;
+                text-align: left;
+                margin: 0 auto;
+                tr{
+                  th{
+                    width: 20%;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/*スマホ用*/
+@media screen and (max-width: 479px){
+  .container{
+    .about-contents{
+      .inner{
+        .about{
+          h2{
+          }
+          p{
+            text-align: left;
+          }
+          .about-me{
+            img{
+              width: 40%;
+            }
+            div{
+              p{
+                text-align: center;
+              }
+              table{
+                width: 100%;
+                word-break: break-all;
+                tr{
+                  th{
+                    width: 30%;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
