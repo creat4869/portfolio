@@ -1,0 +1,137 @@
+.container{
+  .work-contents{
+    .inner{
+      .works{
+        h2.works__h2{
+          margin: 0 0 45px 0;
+          font-size: 35px;
+          text-align: center;
+        }
+        &__top{
+          display: flex;
+          &__detail{
+            // width: 450px;
+            padding-left: 30px;
+            table{
+              tr{
+                vertical-align: middle;
+                th{
+                  div{
+                    width: max-content;
+                    margin: 0 25px 20px 30px;
+                    padding: 8px 0;
+                    font-weight: 600;
+                  }
+                }
+                td{
+                  div{
+                    margin: 0 0 20px 30px;
+                  }
+                }
+                .icon-td{
+                  width: 35px;
+                  img{
+                    width: 100%;
+                    margin: 0 0 20px;
+                  }
+                }
+              }
+            }
+          }
+        }
+        &__middle{
+          h3{
+            border-left: solid 7px #1b1b1b;
+            padding-left: 8px;
+            margin: 40px 0 7px 0;
+            font-weight: 400;
+          }
+          p{
+            font-size: 14px;
+            line-height: 1.8em;
+          }
+        }
+        &__bottom{
+          text-align: center;
+          margin: 90px 0 20px;
+          a{
+            font-size: 19px;
+            font-weight: 400;
+            i{
+              padding-right: 5px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/*PC用*/
+@media screen and (min-width: 960px){
+  .container{
+    .work-contents{
+      .inner{
+        .works{
+          &__top{
+            width: 1100px;
+            margin: 0 auto;
+          }
+          &__middle{
+            width: 1100px;
+            margin: 0 auto;
+          }
+          &__bottom{
+            width: 1100px;
+            margin: 90px auto 20px;
+          }
+        }
+      }
+    }
+  }
+}
+
+/*タブレット・スマホ用*/
+@media screen and (max-width: 959px){
+  .container{
+    .work-contents{
+      .inner{
+        .works{
+          &__top{
+            display: block;
+            img{
+              text-align: center;
+              width: 100%;
+            }
+            &__detail{
+              padding-left: 0;
+              padding-top: 30px;
+              table{
+                margin: 0 auto;
+                // width: 290px;
+                font-size: 14px;
+                tr{
+                  th{
+                    div{
+                      margin: 0 10px 15px 0;
+                    }
+                  }
+                  td{
+                    div{
+                      margin: 0 10px 15px 20px;
+                    }
+                  }
+                  .icon-td{
+                    img{
+                      margin: 0 0 15px;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

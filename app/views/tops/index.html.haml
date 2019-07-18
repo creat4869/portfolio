@@ -1,0 +1,38 @@
+.container
+  .top-img
+    .inner
+      .screen-pc
+        = image_tag "img-pc1.png"
+      .screen-mb
+        = image_tag "img-mb1.png"
+  .top-contents1
+    .inner
+      %section.omoi
+        %div
+          皆さんの笑顔が私の原動力です。
+          %br>/
+          ものづくりを通して誰かの喜びを作りたい
+          %br>/
+          いいものを作りたいと思う全ての方の
+          %br>/
+          お手伝いができればと思っています。
+  .top-contents2
+    .inner
+      %section.menu2
+        %div
+          %ul
+            %li
+              = link_to abouts_path do
+                %div
+                  = image_tag "about.png"
+                  About
+            %li
+              = link_to works_path do
+                %div
+                  = image_tag "work.png"
+                  Work
+            %li
+              = link_to "#" do
+                %div
+                  = image_tag "gallary.png"
+                  Gallary
