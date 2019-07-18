@@ -1,0 +1,10 @@
+.container
+  .work-contents
+    .inner
+      %section.works
+        %h2 Works
+        %div
+          %ul
+            - @works.each do |work|
+              = render partial: "work", locals: {work:work}
+          = paginate(@works)

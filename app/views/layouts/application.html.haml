@@ -1,0 +1,52 @@
+!!!
+%html
+  %head
+    %meta{content: "text/html; charset=UTF-8", "http-equiv": "Content-Type"}/
+    %title Portfolio
+    %meta{content: "width=device-width,initial-scale=1.0,minimum-scale=1.0", name: "viewport"}/
+    = csrf_meta_tags
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    %link{href: "https://use.fontawesome.com/releases/v5.6.1/css/all.css", rel: "stylesheet"}/
+    %link{href: "https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900&display=swap", rel: "stylesheet"}/
+    %link{href: "https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap", rel: "stylesheet"}/
+    %link{href: "https://fonts.googleapis.com/css?family=Noto+Sans+JP:100,300,400,500,700&display=swap&subset=japanese", rel: "stylesheet"}/
+  %body
+    %header
+      .inner
+        %h1
+          = link_to root_path do
+            = image_tag "logo.png"
+            SAYA's Portfolio
+        .screen-pc
+          %ul.header_sns
+            %li
+              = link_to "https://twitter.com/03iZero", target: "_blank" do
+                %i.fab.fa-twitter
+            %li
+              = link_to "https://www.instagram.com/03izero/?hl=ja", target: "_blank" do
+                %i.fab.fa-instagram
+            %li
+              = link_to "https://github.com/creat4869", target: "_blank" do
+                %i.fab.fa-github
+        .screen-mb
+          %a.menu
+            %span.menu__line.menu__line--top
+            %span.menu__line.menu__line--center
+            %span.menu__line.menu__line--bottom
+          %nav.gnav
+            .gnav__wrap
+              %ul.gnav__menu
+                %li.gnav__menu__item
+                  = link_to "Top", root_path
+                %li.gnav__menu__item
+                  = link_to "About", abouts_path
+                %li.gnav__menu__item
+                  = link_to "Works", works_path
+                %li.gnav__menu__item
+                  = link_to "Gallary", "#"
+            / gnav-wrap
+    = yield
+    %footer
+      .inner
+        %p.copyright Copyright © SAYA's Portfolio. All Rights Reserved

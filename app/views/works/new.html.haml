@@ -1,0 +1,33 @@
+.container
+  .work-contents
+    .inner
+      %section.works
+        %h2.works__h2 投稿
+        .works__top
+          = form_for @work, url: { action: 'create'} do |f|
+            .field
+              = f.label :title, class: 'form__l'
+              = f.text_field :title, class: 'form__f'
+            .field
+              = f.label :image_url, class: 'image-label' do
+                = f.file_field :image, class: 'image-label__input'
+            .field
+              = f.label :categry, class: 'form__l'
+              = f.text_field :category, class: 'form__f'
+            .field
+              = f.label :period, class: 'form__l'
+              = f.text_field :period, class: 'form__f'
+            .field
+              = f.label :skill, class: 'form__l'
+              = f.text_field :skill, class: 'form__f'
+            .field
+              = f.label :charge, class: 'form__l'
+              = f.text_field :charge, class: 'form__f'
+            .field
+              = f.label :detail, class: 'form__l'
+              = f.text_field :detail, class: 'form__f'
+            .field.clearfix
+              = f.label :summary, class: 'form__l'
+              = f.text_area :summary, class: 'form__f'
+            .field__btn
+              = f.submit '投稿する', class: 'submit-btn'

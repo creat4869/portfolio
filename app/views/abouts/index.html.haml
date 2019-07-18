@@ -1,0 +1,41 @@
+.container
+  .about-contents
+    .inner
+      %section.about
+        %h2 About
+        %p
+          神戸でフリーランスのWeb制作・イラストレーターとして活動中。
+          %br>/
+          2017年から2年間、マーケティング会社でマーケティング・デザイン・コーディング・イラスト制作等の業務を行う。
+          %br>/
+          会社に勤めつつ、フリーでデザイン・コーディング等の依頼を受ける。
+          %br>/
+          2019年にもっとプログラミングの勉強がしたいと思い、サーバーサイドが学べるスクールに通う。
+          %br>/
+          2019年よりフリーランスに転向。
+        .about-me
+          = image_tag "me.png"
+          %div
+            %p saya
+            %table
+              %tbody
+                %tr
+                  %th 所在地
+                  %td 神戸市内
+                %tr
+                  %th お問い合わせ
+                  %td creat4869@gmail.com
+                %tr
+                  %th 事業内容
+                  %td Webデザイン業務, HTML・CSS・javascript等によるフロント業務, WordPressを使ったサイト制作, デザイン業務, イラスト制作, LPに使用する漫画制作
+        .sns-btn
+          %ul
+            %li
+              = link_to "https://twitter.com/03iZero", target: "_blank" do
+                %i.fab.fa-twitter
+            %li
+              = link_to "https://www.instagram.com/03izero/?hl=ja", target: "_blank" do
+                %i.fab.fa-instagram
+            %li
+              = link_to "https://github.com/creat4869", target: "_blank" do
+                %i.fab.fa-github
