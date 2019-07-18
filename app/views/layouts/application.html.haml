@@ -49,4 +49,7 @@
     = yield
     %footer
       .inner
-        %p.copyright Copyright © SAYA's Portfolio. All Rights Reserved
+        %p.copyright
+          Copyright © SAYA's Portfolio. All Rights Reserved
+          - if user_signed_in?
+            = link_to "OUT", destroy_user_session_path, method: :delete

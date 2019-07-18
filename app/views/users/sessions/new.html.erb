@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="work-contents">
+    <div class="inner">
+      <section class="works">
+        <h2 class="works__h2">Log in</h2>
+        <div class="works__top">
+          <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+            <div class="field clearfix">
+              <%= f.label :email, class: 'form__l' %>
+              <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form__f' %>
+            </div>
+
+            <div class="field clearfix">
+              <%= f.label :password, class: 'form__l' %>
+              <%= f.password_field :password, autocomplete: "current-password", class: 'form__f' %>
+            </div>
+
+            <% if devise_mapping.rememberable? %>
+              <div class="field clearfix">
+                <%= f.check_box :remember_me %>
+                <%= f.label :remember_me %>
+              </div>
+            <% end %>
+
+            <div class="actions field__btn clearfix">
+              <%= f.submit "Log in", class: 'submit-btn' %>
+            </div>
+
+            <%= render "users/shared/links" %>
+          <% end %>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>

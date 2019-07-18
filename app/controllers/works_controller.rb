@@ -1,5 +1,7 @@
 class WorksController < ApplicationController
 
+  before_action :move_to_index, except: [:index, :show]
+
   def index
     @works = Work.includes(:user).page(params[:page]).per(12).order("created_at DESC")
   end
@@ -32,4 +34,9 @@ class WorksController < ApplicationController
   def work_params
     params.require(:work).permit(:title, :image, :category, :period, :skill, :charge, :detail, :summary).merge(user_id: current_user.id)
   end
+
+  def move_to_index
+    redirect_to root_path unless user_signed_in?
+  end
+
 end
