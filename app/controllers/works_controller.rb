@@ -15,12 +15,18 @@ class WorksController < ApplicationController
   end
 
   def create
-    Work.create(work_params)
+    @work = Work.new(work_params)
+    if @work.save
+      redirect_to root_path
+    else
+      render :new
+    end
   end
 
   def destroy
     work = Work.find(params[:id])
-    work.destroy if article.user_id == current_user.id
+    work.destroy if work.user_id == current_user.id
+    redirect_to root_path
   end
 
   def edit

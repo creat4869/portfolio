@@ -54,6 +54,8 @@
           %p
             = simple_format(@work.summary)
         .works__bottom
+          - if user_signed_in? && current_user.id == @work.user_id
+            = link_to '削除', "/works/#{@work.id}", method: :delete, data: { confirm: '削除しますか？' }, class: 'btn_f'
           = link_to works_path do
             %i.fas.fa-caret-left>
             Back
