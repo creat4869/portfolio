@@ -9,7 +9,8 @@
           %ul
             - @works.each do |work|
               = render partial: "work", locals: {work:work}
-          = paginate(@works)
+          .pagination-inner
+            = paginate(@works)
   .screen-pc
     .top-contents2
       .inner
