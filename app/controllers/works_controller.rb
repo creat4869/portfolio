@@ -3,7 +3,7 @@ class WorksController < ApplicationController
   before_action :move_to_index, except: [:index, :show]
 
   def index
-    @works = Work.includes(:user).page(params[:page]).per(12).order("created_at DESC")
+    @works = Work.includes(:user).page(params[:page]).per(10).order("created_at DESC")
   end
 
   def show
@@ -17,7 +17,7 @@ class WorksController < ApplicationController
   def create
     @work = Work.new(work_params)
     if @work.save
-      redirect_to root_path
+      redirect_to works_path
     else
       render :new
     end
@@ -25,14 +25,23 @@ class WorksController < ApplicationController
 
   def destroy
     work = Work.find(params[:id])
-    work.destroy if work.user_id == current_user.id
-    redirect_to root_path
+    if work.user_id == current_user.id
+      work.destroy
+      redirect_to works_path
+    end
   end
 
   def edit
+    @work = Work.find(params[:id])
+    @work.image.cache! unless @work.image.blank?
   end
 
   def update
+    work = Work.find(params[:id])
+    if work.user_id == current_user.id
+      work.update(work_params)
+      redirect_to works_path
+    end
   end
 
   private

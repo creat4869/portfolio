@@ -1,4 +1,5 @@
 %li
   = link_to work_path(work.id), method: :get do
     = image_tag work.image.url
-    %p 個人名刺デザイン
+    %p
+      = work.title

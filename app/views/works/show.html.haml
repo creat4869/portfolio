@@ -55,7 +55,29 @@
             = simple_format(@work.summary)
         .works__bottom
           - if user_signed_in? && current_user.id == @work.user_id
+            = link_to '編集', edit_work_path(@work.id), method: :get, class: 'btn_f'
             = link_to '削除', "/works/#{@work.id}", method: :delete, data: { confirm: '削除しますか？' }, class: 'btn_f'
           = link_to works_path do
             %i.fas.fa-caret-left>
             Back
+  .screen-pc
+    .top-contents2
+      .inner
+        %section.menu2
+          %div
+            %ul
+              %li
+                = link_to abouts_path do
+                  %div
+                    = image_tag "about.png"
+                    About
+              %li
+                = link_to works_path do
+                  %div
+                    = image_tag "work.png"
+                    Works
+              %li
+                = link_to "#" do
+                  %div
+                    = image_tag "gallary.png"
+                    Gallary
