@@ -8,6 +8,18 @@
           font-size: 46px;
           text-align: left;
         }
+        .btn_f{
+          display: block;
+          width: 100px;
+          margin: 0 auto 30px;
+          background: $black;
+          color: $white;
+          padding: 10px 35px;
+          border-radius: 30px;
+          text-align: center;
+          font-size: 19px;
+          font-weight: 400;
+        }
         div{
           ul{
             display: flex;

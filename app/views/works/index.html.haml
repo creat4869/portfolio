@@ -3,8 +3,32 @@
     .inner
       %section.works
         %h2 Works
+        - if user_signed_in?
+          = link_to "投稿", new_work_path, class: 'btn_f'
         %div
           %ul
             - @works.each do |work|
               = render partial: "work", locals: {work:work}
-          = paginate(@works)
+          .pagination-inner
+            = paginate(@works)
+  .screen-pc
+    .top-contents2
+      .inner
+        %section.menu2
+          %div
+            %ul
+              %li
+                = link_to abouts_path do
+                  %div
+                    = image_tag "about.png"
+                    About
+              %li
+                = link_to works_path do
+                  %div
+                    = image_tag "work.png"
+                    Works
+              %li
+                = link_to "#" do
+                  %div
+                    = image_tag "gallary.png"
+                    Gallary
