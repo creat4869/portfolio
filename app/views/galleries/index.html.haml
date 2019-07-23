@@ -2,15 +2,15 @@
   .work-contents
     .inner
       %section.works
-        %h2 Works
+        %h2 Gallery
         - if user_signed_in?
-          = link_to "投稿", new_work_path, class: 'btn_f'
+          = link_to "投稿", new_gallery_path, class: 'btn_f'
         %div
           %ul
-            - @works.each do |work|
-              = render partial: "work", locals: {work:work}
+            - @galleries.each do |gallery|
+              = render partial: "gallery", locals: {gallery:gallery}
           .pagination-inner
-            = paginate(@works)
+            = paginate(@galleries)
   .screen-pc
     .top-contents2
       .inner

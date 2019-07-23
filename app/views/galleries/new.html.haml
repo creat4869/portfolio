@@ -1,0 +1,15 @@
+.container
+  .work-contents
+    .inner
+      %section.works
+        %h2.works__h2 投稿
+        .works__top
+          = form_for @gallery, url: { action: 'create'} do |f|
+            .field
+              = f.label :title, class: 'form__l'
+              = f.text_field :title, class: 'form__f'
+            .field
+              = f.label :image_url, class: 'image-label' do
+                = f.file_field :image, class: 'image-label__input'
+            .field__btn
+              = f.submit '投稿する', class: 'submit-btn'

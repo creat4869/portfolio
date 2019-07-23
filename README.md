@@ -18,6 +18,18 @@
 ### Association
 - belongs_to :user
 
+## galleriesテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|id|integer||
+|title|string|null: false|
+|image|string||
+|user_id|integer||
+
+### Association
+- belongs_to :user
+
 ## usersテーブル
 
 |Column|Type|Options|

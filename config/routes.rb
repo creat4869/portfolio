@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   resources :tops, only: :index
   resources :abouts, only: :index
   resources :works
+  resources :galleries, except: :show
 end
