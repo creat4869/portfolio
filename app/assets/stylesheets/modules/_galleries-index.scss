@@ -5,10 +5,12 @@
         div{
           ul{
             li{
-              img.photo {
-                width: 220px;
-                height: 220px;
-                object-fit: cover;
+              a{
+                img.photo {
+                  width: 220px;
+                  height: 220px;
+                  object-fit: cover;
+                }
               }
             }
           }
@@ -16,4 +18,11 @@
       }
     }
   }
+}
+
+.btn_f2{
+  color: $white;
+  background-color: $black;
+  padding: 0px 10px 2px;
+  border-radius: 50px;
 }
