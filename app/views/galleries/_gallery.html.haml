@@ -1,0 +1,10 @@
+%li
+  = link_to "#modal-#{gallery.id}", class: 'modal' do
+    = image_tag gallery.image.url, class: 'photo'
+  %div{id: "modal-#{gallery.id}",style: "display: none;"}
+    = image_tag gallery.image.url, style: "width: 100%;"
+    %p{style: "font-weight: 400;"}
+      = gallery.title
+    - if user_signed_in? && current_user.id == gallery.user_id
+      = link_to '編集', edit_gallery_path(gallery.id), method: :get, class: 'btn_f2'
+      = link_to '削除', "/galleries/#{gallery.id}", method: :delete, data: { confirm: '削除しますか？' }, class: 'btn_f2'
