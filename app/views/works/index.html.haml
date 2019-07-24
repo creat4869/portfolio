@@ -7,8 +7,7 @@
           = link_to "投稿", new_work_path, class: 'btn_f'
         %div
           %ul
-            - @works.each do |work|
-              = render partial: "work", locals: {work:work}
+            = render @works
           .pagination-inner
             = paginate(@works)
   .screen-pc
