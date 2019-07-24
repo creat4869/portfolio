@@ -7,8 +7,7 @@
           = link_to "投稿", new_gallery_path, class: 'btn_f'
         %div
           %ul
-            - @galleries.each do |gallery|
-              = render partial: "gallery", locals: {gallery:gallery}
+            = render @galleries
           .pagination-inner
             = paginate(@galleries)
   .top-contents2
