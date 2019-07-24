@@ -12,40 +12,30 @@
                 %tr
                   %th
                     %div ジャンル
-                  -# %td.icon-td
-                  -#   = image_tag "icon1.png"
                   %td
                     %div
                       = @work.category
                 %tr
                   %th
                     %div 制作期間
-                  -# %td.icon-td
-                  -#   = image_tag "icon3.png"
                   %td
                     %div
                       = @work.period
                 %tr
                   %th
                     %div 制作スキル
-                  -# %td.icon-td
-                  -#   = image_tag "icon5.png"
                   %td
                     %div
                       = @work.skill
                 %tr
                   %th
                     %div 担当
-                  -# %td.icon-td
-                  -#   = image_tag "icon2.png"
                   %td
                     %div
                       = @work.charge
                 %tr
                   %th
-                    %div 詳細
-                  -# %td.icon-td
-                  -#   = image_tag "icon4.png"
+                    %div.detail-h 詳細
                   %td
                     %div
                       = @work.detail
@@ -60,24 +50,23 @@
           = link_to works_path do
             %i.fas.fa-caret-left>
             Back
-  .screen-pc
-    .top-contents2
-      .inner
-        %section.menu2
-          %div
-            %ul
-              %li
-                = link_to abouts_path do
-                  %div
-                    = image_tag "about.png"
-                    About
-              %li
-                = link_to works_path do
-                  %div
-                    = image_tag "work.png"
-                    Works
-              %li
-                = link_to galleries_path do
-                  %div
-                    = image_tag "gallary.png"
-                    Gallery
+  .top-contents2
+    .inner
+      %section.menu2
+        %div
+          %ul
+            %li
+              = link_to abouts_path do
+                %div
+                  = image_tag "about.png"
+                  About
+            %li
+              = link_to works_path do
+                %div
+                  = image_tag "work.png"
+                  Works
+            %li
+              = link_to galleries_path do
+                %div
+                  = image_tag "gallary.png"
+                  Gallery
