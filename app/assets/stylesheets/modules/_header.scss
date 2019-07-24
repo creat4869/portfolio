@@ -6,6 +6,7 @@ header{
   height: 50px;
   z-index: 100;
   background-color: $white;
+  border-bottom: solid 1px #eee;
   .inner{
     position:relative;
     width: 100%;
