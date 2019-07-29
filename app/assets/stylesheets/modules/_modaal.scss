@@ -117,7 +117,8 @@ $modaal-grey: #afb7bc;
 	position: relative;
 	vertical-align: middle;
 	text-align: center;
-	padding: 80px 25px;
+	padding: 0 25px;
+	// padding: 80px 25px;
 
 	// when is fullscreen
 	.modaal-fullscreen & {
@@ -510,8 +511,10 @@ $modaal-grey: #afb7bc;
 }
 @media screen and (max-height: 1000px) {
 	.modaal-inner-wrapper {
-		padding-top: 60px;
-		padding-bottom: 60px;
+		padding-top: 0;
+		padding-bottom: 0;
+		// padding-top: 60px;
+		// padding-bottom: 60px;
 	}
 	.modaal-instagram iframe {
 		width: 600px !important;
@@ -538,7 +541,26 @@ $modaal-grey: #afb7bc;
 	}
 }
 
+/*PC用*/
+@media screen and (min-width: 960px){
+	.modaal-container {
+		width: 35%;
+	}
+}
 
+/*タブレット用*/
+@media screen and (max-width: 959px){
+	.modaal-container {
+		width: 80%;
+	}
+}
+
+/*スマホ用*/
+@media screen and (max-width: 479px){
+	.modaal-container {
+		width: 100%;
+	}
+}
 
 // CSS loading gif
 // --------------------------------------------------------
