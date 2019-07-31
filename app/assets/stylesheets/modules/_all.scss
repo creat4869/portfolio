@@ -11,6 +11,38 @@ body{
     color: $black;
     text-decoration: none;
   }
+
+  .back-btn {
+    transition: .3s;
+  }
+  .back-btn span {
+    display: inline-block;
+  }
+  .back-btn:hover span {
+    -webkit-transform: rotateY(360deg);
+    transform: rotateY(360deg);
+    transition: .6s;
+  }
+  .back-btn:hover span:nth-of-type(1) {
+    -webkit-transition-delay: .02s;
+    transition-delay: .02s;
+  }
+  .back-btn:hover span:nth-of-type(2) {
+    -webkit-transition-delay: .04s;
+    transition-delay: .04s;
+  }
+  .back-btn:hover span:nth-of-type(3) {
+    -webkit-transition-delay: .06s;
+    transition-delay: .06s;
+  }
+  .back-btn:hover span:nth-of-type(4) {
+    -webkit-transition-delay: .08s;
+    transition-delay: .08s;
+  }
+  .back-btn:hover span:nth-of-type(5) {
+    -webkit-transition-delay: .10s;
+    transition-delay: .10s;
+  }
 }
 
 /*PC用*/
