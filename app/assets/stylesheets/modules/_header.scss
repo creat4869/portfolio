@@ -159,8 +159,9 @@ header{
     .inner{
       h1{
         a{
-          font-size: 19px;
+          font-size: 20px;
           letter-spacing: 5px;
+          white-space: nowrap;
           img{
             vertical-align: bottom;
           }
