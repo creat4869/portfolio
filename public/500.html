@@ -1,66 +1,558 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>We're sorry, but something went wrong (500)</title>
+  <title>The page you were looking for doesn't exist (404)</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">/</link>
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900&display=swap" rel="stylesheet">/</link>
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap" rel="stylesheet">/</link>
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:100,300,400,500,700&display=swap&subset=japanese" rel="stylesheet">/</link>
+
   <style>
-  .rails-default-error-page {
-    background-color: #EFEFEF;
-    color: #2E2F30;
-    text-align: center;
-    font-family: arial, sans-serif;
-    margin: 0;
-  }
+    /*reset.css*/
+    html{
+      color:#000;
+      background:#FFF;
+    }
 
-  .rails-default-error-page div.dialog {
-    width: 95%;
-    max-width: 33em;
-    margin: 4em auto 0;
-  }
+    body,
+    div,
+    dl,
+    dt,
+    dd,
+    ul,
+    ol,
+    li,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    pre,
+    code,
+    form,
+    fieldset,
+    legend,
+    input,
+    textarea,
+    p,
+    blockquote,
+    th,
+    td {
+      margin:0;
+      padding:0;
+    }
+    table {
+      border-collapse:collapse;
+      border-spacing:0;
+    }
+    fieldset,
+    img {
+      border:0;
+    }
 
-  .rails-default-error-page div.dialog > div {
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #BBB;
-    border-top: #B00100 solid 4px;
-    border-top-left-radius: 9px;
-    border-top-right-radius: 9px;
-    background-color: white;
-    padding: 7px 12% 0;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
-  }
+    address,
+    caption,
+    cite,
+    code,
+    dfn,
+    em,
+    strong,
+    th,
+    var {
+      font-style:normal;
+      font-weight:normal;
+    }
 
-  .rails-default-error-page h1 {
-    font-size: 100%;
-    color: #730E15;
-    line-height: 1.5em;
-  }
+    ol,
+    ul {
+      list-style:none;
+    }
 
-  .rails-default-error-page div.dialog > p {
-    margin: 0 0 1em;
-    padding: 1em;
-    background-color: #F7F7F7;
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #999;
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
-    border-top-color: #DADADA;
-    color: #666;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
-  }
+    caption,
+    th {
+      text-align:left;
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-size:100%;
+      font-weight:normal;
+    }
+    q:before,
+    q:after {
+      content:'';
+    }
+    abbr,
+    acronym {
+      border:0;
+      font-variant:normal;
+    }
+
+    sup {
+      vertical-align:text-top;
+    }
+    sub {
+      vertical-align:text-bottom;
+    }
+    input,
+    textarea,
+    select {
+      font-family:inherit;
+      font-size:inherit;
+      font-weight:inherit;
+    }
+
+    input,
+    textarea,
+    select {
+      *font-size:100%;
+    }
+
+    legend {
+      color:#000;
+    }
+
+    #yui3-css-stamp.cssreset { display: none; }
+
+    /*all.css*/
+    body{
+      font-family: 'Noto Sans JP', 'Source Sans Pro', sans-serif;
+      background-image: url("https://portfolio-s.herokuapp.com/images/dots_bg.png");
+      background-position: 0 -2px;
+      background-size: 16px;
+      color: #333;
+      font-weight: 300;
+    }
+
+    a{
+        color: #333;
+        text-decoration: none;
+      }
+
+    /*PC用*/
+    @media screen and (min-width: 960px){
+      .screen-mb{
+        display: none;
+      }
+    }
+
+    /*タブレット・スマホ用*/
+    @media screen and (max-width: 959px){
+      .screen-pc{
+        display: none;
+      }
+    }
+
+    /*header.css*/
+    header{
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 50px;
+      z-index: 100;
+      background-color: #fff;
+      border-bottom: solid 1px #eee;
+    }
+
+    header .inner{
+      position:relative;
+      width: 100%;
+      height: 50px;
+      z-index: 99;
+    }
+
+    header .inner h1{
+      display: inline-block;
+      padding: 7px 12px;
+    }
+
+    header .inner h1 a{
+      font-size: 25px;
+      letter-spacing: 7px;
+    }
+
+    header .inner h1 a img{
+      width: 32px;
+      padding-right: 7px;
+      vertical-align: sub;
+    }
+
+    header .inner .screen-pc{
+      display: inline;
+    }
+
+    header .inner .screen-pc .header_sns{
+      display: inline-block;
+      float: right;
+      padding: 12px;
+    }
+
+    header .inner .screen-pc .header_sns li{
+      display: inline-block;
+      margin: 0 10px;
+    }
+
+    header .inner .screen-pc .header_sns li .fab{
+      font-size: 25px;
+    }
+
+    /*menu*/
+    .menu{
+      height: 20px;
+      position: absolute;
+      right: 15px;
+      top: 15px;
+      width: 25px;
+      z-index: 99;
+    }
+
+    .menu .menu__line{
+      background: #333;
+      display: block;
+      height: 2px;
+      position: absolute;
+      transition:transform .3s;
+      width: 100%;
+    }
+
+    .menu .menu__line--top.active{
+      top: 8px;
+      transform: rotate(45deg);
+      background: #fff;
+    }
+
+    .menu .menu__line--center{
+      top: 9px;
+    }
+
+    .menu .menu__line--center.active{
+      transform:scaleX(0);
+      background: #fff;
+    }
+
+    .menu .menu__line--bottom{
+      bottom: 0;
+    }
+
+    .menu .menu__line--bottom.active{
+      bottom: 10px;
+      transform: rotate(135deg);
+      background: #fff;
+    }
+
+    /*gnav*/
+    .gnav{
+      background: rgba(0,0,0,0.8);
+      display: none;
+      height: 100%;
+      position: fixed;
+      width: 100%;
+      z-index: 98;
+    }
+
+    .gnav .gnav__wrap{
+      align-items:center;
+      display: flex;
+      height: 100%;
+      position: absolute;
+      width: 100%;
+    }
+
+    .gnav .gnav__wrap .gnav__menu{
+      position: absolute;
+      left: 52.5%;
+      top: 20%;
+      transform: translateX(-50%);
+      width: 170px;
+    }
+
+    .gnav .gnav__wrap .gnav__menu .gnav__menu__item{
+      margin: 20px 0 20px 100px;
+      opacity: 0;
+    }
+
+    .gnav .gnav__wrap .gnav__menu .gnav__menu__item a{
+      color: #fff;
+      font-size: 2em;
+      font-weight: 600;
+      text-decoration: none;
+      transition: .5s;
+    }
+
+    .gnav .gnav__wrap .gnav__menu .gnav__menu__item a:hover{
+      color: #666;
+    }
+
+    /*PC用*/
+    @media screen and (min-width: 960px){
+      header .inner{
+          width: 1200px;
+          margin: 0 auto;
+      }
+    }
+
+    /*タブレット用*/
+    @media screen and (max-width: 959px){
+      header .inner h1{
+        float: left;
+      }
+
+      header .inner .screen-pc{
+        display: none;
+      }
+
+      .gnav .gnav__wrap .gnav__menu{
+        left: 56%;
+      }
+    }
+
+    /*スマホ用*/
+    @media screen and (max-width: 479px){
+      header .inner h1 a{
+        font-size: 20px;
+        letter-spacing: 5px;
+      }
+
+      header .inner h1 a img{
+        vertical-align: bottom;
+      }
+
+      .gnav .gnav__wrap .gnav__menu{
+        left: 60%;
+      }
+    }
+
+    /*contents.css*/
+    .container{
+      margin-top: 27px;
+    }
+
+    section.error{
+      padding: 40px 0;
+      margin: 0 auto;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    section.error img{
+      width: 100%;
+    }
+
+    section.error div{
+      margin-top: 15px;
+    }
+
+    .top-contents2{
+      background-image: url("https://portfolio-s.herokuapp.com/images/background.png");
+    }
+
+    .top-contents2 .inner .menu2 div{
+      text-align: center;
+    }
+
+    .top-contents2 .inner .menu2 div ul{
+      display: inline-block;
+    }
+
+    .top-contents2 .inner .menu2 div ul li{
+      display: table-cell;
+      width: 200px;
+      padding: 50px 25px;
+    }
+
+    .top-contents2 .inner .menu2 div ul li div{
+      text-align: center;
+      font-size: 25px;
+      font-weight: 400;
+    }
+
+    .top-contents2 .inner .menu2 div ul li div img{
+      width: 65%;
+    }
+
+    /*PC用*/
+    @media screen and (min-width: 960px){
+      section.error{
+        width: 800px;
+      }
+
+      section.error img{
+        width: 80%;
+      }
+    }
+
+    /*タブレット用*/
+    @media screen and (max-width: 959px){
+      section.error{
+        margin: 0 16px;
+      }
+    }
+
+    /*スマホ用*/
+    @media screen and (max-width: 479px){
+      .top-contents2 .inner .menu2 div ul li{
+        width: auto;
+        padding: 30px 10px;
+      }
+
+      .top-contents2 .inner .menu2 div ul li div{
+        font-size: 17px;
+      }
+
+      .top-contents2 .inner .menu2 div ul li div img{
+        width: 65%;
+      }
+    }
+
+    /*footer.css*/
+    footer{
+      width: 100%;
+      height: 50px;
+    }
+
+    footer .inner{
+      width: 100%;
+      height: 50px;
+      background-color: #fff;
+    }
+
+    footer .inner .copyright{
+      font-size: .5em;
+      text-align: center;
+      padding: 19px 0;
+    }
   </style>
+
+  <script>
+    $(function(){
+        var navFlg = false;
+        $('.menu').on('click',function(){
+            $('.menu__line').toggleClass('active');
+            $('.gnav').fadeToggle();
+            if(!navFlg){
+                $('.gnav__menu__item').each(function(i){
+                    $(this).delay(i*300).animate({
+                        'margin-left' : 0,
+                        'opacity' : 1,
+                    },500);
+                });
+                navFlg = true;
+            }
+            else{
+                $('.gnav__menu__item').css({
+                    'margin-left' : 100,
+                    'opacity' : 0,
+                });
+                navFlg = false;
+            }
+        });
+    });
+  </script>
 </head>
 
-<body class="rails-default-error-page">
-  <!-- This file lives in public/500.html -->
-  <div class="dialog">
-    <div>
-      <h1>We're sorry, but something went wrong.</h1>
+<body>
+  <header>
+    <div class="inner">
+      <h1>
+        <a href="/">
+          <img src="hhttps://portfolio-s.herokuapp.com/images/logo-3d8e7cd3188b40b6d7a5869ad49aa471f5804cec5e8f0a0ff174c9dc85937845.png" alt="Logo">SAYA's Portfolio
+        </a>
+      </h1>
+      <div class="screen-pc">
+        <ul class="header_sns">
+          <li>
+            <a target="_blank" href="https://twitter.com/03iZero"><i class="fab fa-twitter"></i></a>
+          </li>
+          <li>
+            <a target="_blank" href="https://www.instagram.com/03izero/?hl=ja"><i class="fab fa-instagram"></i></a>
+          </li>
+          <li>
+            <a target="_blank" href="https://github.com/creat4869"><i class="fab fa-github"></i></a>
+          </li>
+        </ul>
+      </div>
+      <div class="screen-mb">
+        <a class="menu">
+          <span class="menu__line menu__line--top"></span>
+          <span class="menu__line menu__line--center"></span>
+          <span class="menu__line menu__line--bottom"></span>
+        </a>
+        <nav class="gnav">
+          <div class="gnav__wrap">
+            <ul class="gnav__menu">
+              <li class="gnav__menu__item">
+                <a href="/">Top</a>
+              </li>
+              <li class="gnav__menu__item">
+                <a href="/abouts">About</a>
+              </li>
+              <li class="gnav__menu__item">
+                <a href="/works">Works</a>
+              </li>
+              <li class="gnav__menu__item">
+                <a href="/galleries">Gallery</a>
+              </li>
+            </ul>
+          </div>
+          <!-- gnav-wrap -->
+        </nav>
+      </div>
     </div>
-    <p>If you are the application owner check the logs for more information.</p>
+  </header>
+
+  <div class="container">
+    <div class="error-contents">
+      <div class="inner">
+        <section class="error">
+          <img src="https://portfolio-s.herokuapp.com/images/500page.png" alt="404">
+          <div>申し訳ありません。<br>ただいま障害が発生しております。<br>復旧作業中ですのでしばらくお待ち下さい。
+          </div>
+        </section>
+      </div>
+    </div>
+    <div class="top-contents2">
+      <div class="inner">
+        <section class="menu2">
+          <div>
+            <ul>
+              <li>
+                <a href="/abouts">
+                  <div><img src="https://portfolio-s.herokuapp.com/images/about.png" alt="abouts">About</div>
+                </a>
+              </li>
+              <li>
+                <a href="/works">
+                  <div>
+                    <img src="https://portfolio-s.herokuapp.com/images/work.png" alt="works">Works
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="/galleries">
+                  <div>
+                    <img src="https://portfolio-s.herokuapp.com/images/gallary.png" alt="gallery">Gallery
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </section>
+      </div>
+    </div>
   </div>
+  
+  <footer>
+    <div class="inner">
+      <p class="copyright">Copyright © SAYA's Portfolio. All Rights Reserved</p>
+    </div>
+  </footer>
 </body>
 </html>
