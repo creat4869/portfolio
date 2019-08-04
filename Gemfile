@@ -64,6 +64,7 @@ gem 'erb2haml'
 
 gem 'kaminari'
 gem 'devise'
+gem 'meta-tags'
 
 gem 'carrierwave'
 gem 'mini_magick'
